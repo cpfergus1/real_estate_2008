@@ -25,4 +25,12 @@ class HouseTest <Minitest::Test
     house.add_room(room_2)
     assert_equal [room_1, room_2], house.rooms
   end
+
+  def test_above_market_average
+    house = House.new("$400000", "123 sugar lane")
+    assert_equal false, house.above_market_average?
+    house2 = House.new("$600000", "123 sugar lane")
+    assert_equal true, house2.above_market_average?
+  end
+
 end
