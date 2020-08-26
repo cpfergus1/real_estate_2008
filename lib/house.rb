@@ -44,9 +44,11 @@ class House
 
   def rooms_sorted_by_area
     #require 'pry'; binding.pry
-    (@rooms.sort_by{|room| room.area}).reverse
+    @rooms = (@rooms.sort_by{|room| room.area}).reverse
   end
 
-  # def rooms_sorted_be_category
-  # end
+  def rooms_sorted_by_category
+    @rooms = (@rooms.sort_by{|room| room.category})
+    require 'pry'; binding.pry
+  end
 end
