@@ -42,4 +42,11 @@ class House
     ((@price.delete "$").to_f/area.to_f).round(2)
   end
 
+  def rooms_sorted_by_area
+    #require 'pry'; binding.pry
+    (@rooms.sort_by{|room| room.area}).reverse
+  end
+
+  # def rooms_sorted_be_category
+  # end
 end
