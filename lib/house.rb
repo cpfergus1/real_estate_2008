@@ -30,4 +30,11 @@ class House
     end
     sum
   end
+
+  def details
+    hashed = {}
+    hashed["price"] = (@price.delete "$").to_i
+    hashed["address"] = @address
+    hashed
+  end
 end
