@@ -18,4 +18,8 @@ class House
   def above_market_average?
     @price.reverse.chop.reverse.to_i > 500000
   end
+
+  def rooms_from_category(category)
+    @rooms.find_all {|room| room.category == category}
+  end
 end
