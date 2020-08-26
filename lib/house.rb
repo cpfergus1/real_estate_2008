@@ -16,7 +16,7 @@ class House
   end
 
   def above_market_average?
-    @price.reverse.chop.reverse.to_i > 500000
+    (@price.delete "$").to_i > 500000
   end
 
   def rooms_from_category(category)
@@ -37,4 +37,9 @@ class House
     hashed["address"] = @address
     hashed
   end
+
+  def price_per_square_foot
+    ((@price.delete "$").to_f/area.to_f).round(2)
+  end
+
 end
